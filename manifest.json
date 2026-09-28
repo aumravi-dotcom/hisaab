@@ -1,6 +1,6 @@
 {
-  "name": "Hisaab",
-  "short_name": "Hisaab",
+  "name": "Hisaab-Kitaab",
+  "short_name": "Hisaab-Kitaab",
   "description": "Household money tracker for Aum and Saumya",
   "start_url": "/",
   "display": "standalone",
