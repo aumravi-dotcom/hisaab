@@ -352,3 +352,53 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: -0.01em; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- update 1 ---------- */
+.welcome { padding: 2px 2px 0; }
+.welcome h1 { margin: 0; font-size: 26px; font-weight: 700; line-height: 1.15; }
+.welcome p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+.ring.save .fg { stroke: var(--green); }
+.period-label { display: inline-flex; align-items: center; justify-content: center; gap: 4px; border-radius: 10px; }
+.period-label:hover { background: var(--soft); }
+.period-label svg { width: 16px; height: 16px; color: var(--muted); }
+.pickable { position: relative; cursor: pointer; }
+.pickable input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.mgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.mbtn { padding: 16px 8px; border-radius: 14px; background: var(--soft); font-weight: 650; font-size: 16px; border: 1.5px solid transparent; }
+.mbtn:hover:not(:disabled) { border-color: var(--line); }
+.mbtn.on { background: var(--red); color: var(--on-red); }
+.mbtn:disabled { opacity: .3; cursor: default; }
+
+/* ---------- reports ---------- */
+.tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 960px) { .tiles { grid-template-columns: repeat(4, 1fr); } }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.tile span { font-size: 13px; color: var(--muted); }
+.tile b { font-family: var(--display); font-size: 21px; font-weight: 700; }
+.tile b.inc { color: var(--green); }
+.tile small { font-size: 12px; color: var(--muted); line-height: 1.3; }
+.bars rect.inc { fill: var(--green); opacity: 1; }
+.bars rect.sp { fill: var(--red); opacity: 1; }
+.bars rect.sv { fill: var(--gold); opacity: 1; }
+.legend-row { display: flex; gap: 16px; justify-content: center; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.legend-row span { display: inline-flex; align-items: center; gap: 6px; }
+.rtable-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; -webkit-overflow-scrolling: touch; }
+.rtable { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
+.rtable.compare { min-width: 0; }
+.rtable th, .rtable td { padding: 11px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.rtable td { text-align: right; font-variant-numeric: tabular-nums; }
+.rtable td.left { text-align: left; white-space: normal; line-height: 1.6; }
+.rtable thead th { font-size: 12.5px; color: var(--muted); font-weight: 650; text-align: right; }
+.rtable thead th:first-child, .rtable tbody th, .rtable tfoot th { text-align: left; }
+.rtable tbody th { font-weight: 600; }
+.rtable th:first-child { position: sticky; left: 0; background: var(--card); padding-left: 0; z-index: 1; }
+.rtable tfoot th, .rtable tfoot td { font-weight: 700; border-bottom: 0; }
+.rtable tr:last-child th, .rtable tr:last-child td { border-bottom: 0; }
+.rtable tbody tr[data-action] { cursor: pointer; }
+.rtable tbody tr[data-action]:hover td, .rtable tbody tr[data-action]:hover th { background: var(--soft); }
+.rtable .inc { color: var(--green); }
+.rtable .neg { color: var(--red); }
+.rtable .up { color: var(--red); font-weight: 650; }
+.rtable .down { color: var(--green); font-weight: 650; }
+.sheet-body .settle-hero { border: 0; padding: 4px 0 0; }
+.rtable.compare td.left { white-space: nowrap; }
