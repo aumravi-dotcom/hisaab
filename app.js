@@ -222,6 +222,10 @@ async function boot() {
     render();
   } catch (e) {
     console.error(e);
+    if (/issued at future/i.test(e.message || '') && (boot.retries = (boot.retries || 0) + 1) <= 5) {
+      booting = false;
+      return setTimeout(boot, 2000);
+    }
     renderError(e);
   } finally { booting = false; }
 }
